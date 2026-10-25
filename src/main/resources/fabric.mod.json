@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "behind_frontrooms",
+  "version": "${version}",
+  "name": "Behind Frontrooms",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/behind_frontrooms/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "com.engstudio.behindfrontrooms.client.BfCoreDataGenerator"
+    ],
+    "client": [
+      "com.engstudio.behindfrontrooms.client.BfCoreClient"
+    ],
+    "main": [
+      "com.engstudio.behindfrontrooms.BfCore"
+    ]
+  },
+  "mixins": [
+    "behind_frontrooms.mixins.json",
+    {
+      "config": "behind_frontrooms.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
